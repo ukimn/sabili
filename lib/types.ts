@@ -9,7 +9,7 @@ export interface quranApiResponse {
   englishName: string;
   englishNameTranslation: string;
   numberOfAyahs: number;
-  revelationType: string;
+  revelationType: "Meccan" | "Madinan";
 }
 
 export interface surahCardProps {
@@ -18,5 +18,5 @@ export interface surahCardProps {
   englishName: string;
   englishNameTranslation: string;
   numberOfAyahs: number;
-  revelationType: "Meccan" | "Medinan";
+  revelationType: "Meccan" | "Madinan";
 }

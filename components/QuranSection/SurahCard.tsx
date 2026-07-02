@@ -1,4 +1,6 @@
+"use client";
 import { surahCardProps } from "@/lib/types";
+import { useRouter } from "next/navigation";
 
 export default function SurahCard({
   name,
@@ -7,8 +9,14 @@ export default function SurahCard({
   numberOfAyahs,
   number,
 }: surahCardProps) {
+  const router = useRouter();
   return (
-    <div className="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-surface-cream transition-colors duration-200 cursor-pointer">
+    <div
+      className="flex items-center gap-4 px-4 py-3 rounded-xl hover:bg-surface-cream transition-colors duration-200 cursor-pointer"
+      onClick={() => {
+        router.push(`/?number=${number}`);
+      }}
+    >
       <div className="flex items-center justify-center h-10 w-10 min-w-10 rounded-full bg-slate-100 font-medium text-sm text-text-muted">
         {number}
       </div>

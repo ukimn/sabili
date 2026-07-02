@@ -11,10 +11,14 @@ export default function Header() {
         </h1>
       </nav>
       <nav>
-        <div className="flex gap-8">
+        <div className="flex gap-3">
           {headerData.map(({ title, url }) => {
             return (
-              <Link href={url} key={title} className="duration-300 hover:text-se-primary-light text-xl hover:-translate-0.5">
+              <Link
+                href={url}
+                key={title}
+                className="duration-300 hover:bg-bg-soft-green text-xl py-2 px-4 rounded-md"
+              >
                 {title}
               </Link>
             );
