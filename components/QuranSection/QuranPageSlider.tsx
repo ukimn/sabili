@@ -4,9 +4,10 @@ import SurahCard from "./SurahCard";
 import { Input } from "../ui/input";
 import { useState, useEffect } from "react";
 import { quranApiResponse } from "@/lib/types";
+import { GrIndicator } from "react-icons/gr";
 
 export default function QuranPageSlider() {
-  const [surah, setSurah] = useState<quranApiResponse[] | null>(null);
+  const [surah, setSurah] = useState<quranApiResponse[] | undefined>(undefined);
   const [search, setSearch] = useState("");
   useEffect(() => {
     async function requestSurah() {
@@ -36,8 +37,8 @@ export default function QuranPageSlider() {
         />
       </div>
       <div className="flex flex-col items-center space-y-2">
-        {surah
-          ?.filter((surah) => surah.englishName.toLowerCase().includes(search))
+        {surah ?
+          surah.filter((surah) => surah.englishName.toLowerCase().includes(search))
           .map(
             ({
               name,
@@ -59,7 +60,7 @@ export default function QuranPageSlider() {
                 />
               );
             },
-          )}
+          ): <h1 className="text-center text-2xl">Fetch Surahs...</h1>}
       </div>
     </aside>
   );
