@@ -2,6 +2,7 @@
 import { SurahApiResponse } from "@/lib/types";
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect, Suspense } from "react";
+import AyahCard from "./AyahCard";
 
 // 1. The actual component that fetches and handles the data
 function SurahReader() {
@@ -20,6 +21,7 @@ function SurahReader() {
       try {
         const response = await fetch(
           `https://api.alquran.cloud/v1/surah/${numberOfSurah}`,
+          { cache: "force-cache" },
         );
 
         if (!response.ok) {
@@ -62,17 +64,14 @@ function SurahReader() {
       </h1>
 
       <div className="w-full space-y-4" dir="rtl">
-        {ayat.data.ayahs.map(({ text, numberInSurah }) => {
+        {ayat.data.ayahs.map(({ text, numberInSurah, sajda }) => {
           return (
-            <p
+            <AyahCard
               key={numberInSurah}
-              className="text-black text-right text-2xl leading-loose border-b border-gray-100 pb-3"
-            >
-              {text}{" "}
-              <span className="text-sm text-gray-400 bg-gray-100 px-2 py-0.5 rounded-full mr-2 font-sans">
-                {numberInSurah}
-              </span>
-            </p>
+              text={text}
+              sajda={sajda}
+              number={numberInSurah}
+            />
           );
         })}
       </div>
