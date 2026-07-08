@@ -57,3 +57,12 @@ export interface SurahData {
 export interface SurahApiResponse {
   data: SurahData;
 }
+
+export interface athkar{
+  title: string;
+  content: {
+    zekr: string;
+    repeat: number;
+    bless: string;
+  }[]
+}

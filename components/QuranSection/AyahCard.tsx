@@ -1,14 +1,17 @@
+import SujudLineIcon from "../SujudIcons";
+import { FaBook } from "react-icons/fa";
+
 export default function AyahCard({
   text,
   number,
-  sajda
+  sajda,
 }: {
   text: string;
   number: number;
   sajda: boolean;
 }) {
   return (
-    <div className="w-full bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-2xl p-5 md:p-7 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col gap-5">
+    <div className="w-full bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-2xl p-5 md:p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col gap-5">
       {/* Top Section: Badge and Metadata */}
       <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800/60 pb-3">
         {/* Elegant modern geometric number badge */}
@@ -17,9 +20,15 @@ export default function AyahCard({
         </div>
 
         {/* Subtle decorative element */}
-        <span className="text-black dark:text-zinc-600 text-xl tracking-widest font-medium uppercase">
-          ✦ {sajda ? "Sajda" : "No Sajda"} ✦
-        </span>
+        {sajda ? (
+          <span className="text-black items-center flex dark:text-zinc-600 text-xl tracking-widest font-medium uppercase">
+            ✦ <SujudLineIcon /> ✦
+          </span>
+        ) : (
+          <span className="text-black items-center flex dark:text-zinc-600 text-xl tracking-widest font-medium uppercase">
+            ✦ <FaBook /> ✦
+          </span>
+        )}
       </div>
 
       {/* Text Section: Optimized for Arabic typography */}
