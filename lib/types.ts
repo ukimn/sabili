@@ -26,9 +26,9 @@ export interface QuranEdition {
   language: string;
   name: string;
   englishName: string;
-  format: 'text' | 'audio' | string;
+  format: "text" | "audio" | string;
   type: string;
-  direction: 'rtl' | 'ltr';
+  direction: "rtl" | "ltr";
 }
 
 export interface Ayah {
@@ -48,7 +48,7 @@ export interface SurahData {
   name: string;
   englishName: string;
   englishNameTranslation: string;
-  revelationType: 'Meccan' | 'Medinan';
+  revelationType: "Meccan" | "Medinan";
   numberOfAyahs: number;
   ayahs: Ayah[];
   edition: QuranEdition;
@@ -58,11 +58,7 @@ export interface SurahApiResponse {
   data: SurahData;
 }
 
-export interface athkar{
+export interface zikerTypes {
   title: string;
-  content: {
-    zekr: string;
-    repeat: number;
-    bless: string;
-  }[]
+  content: { zekr: string; repeat: number; bless: string }[];
 }

@@ -1,4 +1,4 @@
-export function SujudLineIcon({ size = 24, color = "currentColor", ...props }) {
+export function SujudLineIcon({ size = 24, color = "currentColor", ...props }: React.SVGProps<SVGSVGElement> & { size?: number }) {
   return (
     <svg
       width={size}

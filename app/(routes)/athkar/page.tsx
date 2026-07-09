@@ -1,9 +1,5 @@
-import ZikrCard from "@/components/AthkarSection/ZikrCard";
-
 export default function AthkarPage() {
   return (
-    <div className="grid grid-cols-4 mx-5 my-8">
-      <ZikrCard />
-    </div>
+    <div className="flex min-h-[calc(100vh-80px)] items-start justify-center px-4 py-10 md:py-16"></div>
   );
 }

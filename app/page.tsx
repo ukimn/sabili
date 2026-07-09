@@ -1,4 +1,4 @@
-import QuranFullPage from "@/components/QuranSection/QuranFullPage";
+import QuranFullPage from "@/components/quran/QuranFullPage";
 
 export default function Home() {
   return (
