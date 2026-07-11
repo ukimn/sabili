@@ -1,5 +1,9 @@
+import AthkarMainPage from "@/components/athkar/AthkarMainPage";
+
 export default function AthkarPage() {
   return (
-    <div className="flex min-h-[calc(100vh-80px)] items-start justify-center px-4 py-10 md:py-16"></div>
+    <div className="flex min-h-[calc(100vh-80px)] items-start justify-center px-4 py-10 md:py-16">
+      <AthkarMainPage />
+    </div>
   );
 }

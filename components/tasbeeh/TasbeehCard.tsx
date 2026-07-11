@@ -135,6 +135,9 @@ function ZikrCounter({
 export default function TasbeehCard() {
   const [completed, setCompleted] = useState<Set<number>>(new Set());
   const [resetKey, setResetKey] = useState(0);
+  const [tasbeehMode, setTasbeehMode] = useState<"default" | "custom">(
+    "default",
+  );
 
   const handleComplete = (index: number) => {
     setCompleted((prev) => new Set(prev).add(index));
@@ -198,3 +201,5 @@ export default function TasbeehCard() {
     </div>
   );
 }
+
+// TODO: create a new component that called CustomTasbeeh to give the user options to right any zikr to repeat it!
