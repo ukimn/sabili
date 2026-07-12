@@ -11,7 +11,7 @@ export default function AthkarMainPage() {
       </div>
       <div className="grid grid-cols-3 items-center gap-10 mx-10">
         {azkarTypes.map(({ name, id, desc }) => (
-          <ZikrCard key={id} name={name} desc={desc}/>
+          <ZikrCard key={id} name={name} desc={desc} id={id}/>
         ))}
       </div>
     </div>
