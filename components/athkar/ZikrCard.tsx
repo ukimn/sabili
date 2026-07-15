@@ -37,7 +37,7 @@ export default function ZikrCard({
       className="space-y-7 flex flex-col items-start w-full h-full border rounded-lg py-9 px-9 shadow-lg cursor-pointer select-none"
     >
       <motion.h1
-        className="text-4xl font-bold truncate max-w-full"
+        className="text-4xl font-bold truncate max-w-full md:text-2xl sm:text-xl"
         initial={{ x: -10, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
@@ -55,7 +55,7 @@ export default function ZikrCard({
         whileHover="hover"
         whileTap={{ scale: 0.97 }}
         onClick={() => {
-          router.push(`/athkar/${id}`);
+          router.push(`/athkar/${id.toString()}`);
         }}
       >
         {/* Fill layer that slides in */}

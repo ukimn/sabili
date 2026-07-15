@@ -234,7 +234,6 @@ export default function TasbeehCard() {
   );
 }
 
-// TODO: create a new component that called CustomTasbeeh to give the user options to right any zikr to repeat it!
 
 function CustomTasbeeh() {
   // Text currently typed into the "add new zikr" input field
@@ -309,9 +308,9 @@ function CustomTasbeeh() {
         </motion.button>
       </div>
       <div className="my-4 min-w-full flex items-center justify-center">
-        <Select dir="rtl">
+        <Select dir="rtl" defaultValue={azkarList[0].zekr}>
           <SelectTrigger className="w-full max-w-48">
-            <SelectValue defaultValue={azkarList[0].zekr} />
+            <SelectValue/>
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>

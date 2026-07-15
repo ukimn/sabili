@@ -3,7 +3,7 @@
 import SurahCard from "./SurahCard";
 import { Input } from "../ui/input";
 import { useState } from "react";
-import { useSurahs } from "@/hooks/useQuran";
+import { useSurahs } from "@/hooks/fetching";
 import { motion } from "motion/react";
 import { Search, BookOpen } from "lucide-react";
 
@@ -73,28 +73,27 @@ export default function QuranPageSlider() {
         )}
 
         {/* Surah List */}
-        {!isLoading &&
-          filteredSurahs.length > 0 && (
-            <div>
-              {filteredSurahs.map((surahItem, index) => (
-                <motion.div
-                  key={surahItem.number}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.02, duration: 0.3 }}
-                >
-                  <SurahCard
-                    name={surahItem.name}
-                    englishName={surahItem.englishName}
-                    englishNameTranslation={surahItem.englishNameTranslation}
-                    numberOfAyahs={surahItem.numberOfAyahs}
-                    revelationType={surahItem.revelationType}
-                    number={surahItem.number}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          )}
+        {!isLoading && filteredSurahs.length > 0 && (
+          <div>
+            {filteredSurahs.map((surahItem, index) => (
+              <motion.div
+                key={surahItem.number}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.02, duration: 0.3 }}
+              >
+                <SurahCard
+                  name={surahItem.name}
+                  englishName={surahItem.englishName}
+                  englishNameTranslation={surahItem.englishNameTranslation}
+                  numberOfAyahs={surahItem.numberOfAyahs}
+                  revelationType={surahItem.revelationType}
+                  number={surahItem.number}
+                />
+              </motion.div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Footer count */}

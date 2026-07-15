@@ -2,7 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import AyahCard from "./AyahCard";
-import { useSurah } from "@/hooks/useQuran";
+import { useSurah } from "@/hooks/fetching";
 import { motion } from "motion/react";
 import { BookOpen, Layers } from "lucide-react";
 

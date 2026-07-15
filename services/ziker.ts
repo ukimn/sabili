@@ -12,7 +12,7 @@ export const azkarTypes = [
   {
     id: 2,
     name: "Athkar Almessa",
-    file: "azkar_messa.json",
+    file: "azkar_massa.json",
     desc: "Evening supplications recited after Asr or Maghrib prayer to seek tranquility, forgiveness, and guardianship overnight.",
   },
   {
@@ -25,8 +25,12 @@ export const azkarTypes = [
 
 export async function getZiker(typeOfZiker: number): Promise<zikerTypes> {
   const response = await fetch(
-    `${BASE_URL}/${azkarTypes[typeOfZiker]["file"]}`,
+    `${BASE_URL}/${azkarTypes[typeOfZiker - 1]["file"]}`,
   );
+
+  if (!response.ok) {
+    throw new Error("Oops! something went wrong!");
+  }
 
   return response.json();
 }

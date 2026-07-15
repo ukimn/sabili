@@ -10,7 +10,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="glass sticky top-0 z-50 flex items-center justify-between px-8 py-4">
+    <header className="glass top-0 z-50 flex items-center justify-between px-8 py-4">
       {/* Logo */}
       <Link href="/" className="group flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-se-primary text-white shadow-lg shadow-se-primary/20 transition-transform duration-300 group-hover:scale-105">
